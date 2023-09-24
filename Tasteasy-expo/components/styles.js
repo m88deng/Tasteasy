@@ -1,12 +1,6 @@
 import styled from "styled-components";
-import {
-  StatusBar,
-  View,
-  Text,
-  Image,
-  TextInput,
-  TouchableOpacity,
-} from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import Constants from "expo-constants";
 
 const statusBarHeight = StatusBar.currentHeight;
@@ -39,6 +33,7 @@ export const InnerContainer = styled.View`
 `;
 
 export const PageLogo = styled.Image`
+  margin-top: 60px;
   width: 120px;
   height: 120px;
 `;
@@ -65,9 +60,9 @@ export const StyledFormArea = styled.View`
 
 export const StyledTextInput = styled.TextInput`
   background-color: ${platinum};
-  padding: 12px;
-  padding-left: 48px;
-  padding-right: 45px;
+  padding: 15px;
+  padding-left: 55px;
+  padding-right: 40px;
   border-radius: 5px;
   font-size: 16px;
   height: 60px;
@@ -84,14 +79,14 @@ export const StyledInputLabel = styled.Text`
 `;
 
 export const LeftIcon = styled.View`
-  left: 9px;
+  left: 15px;
   top: 38px;
   position: absolute;
   z-index: 1;
 `;
 
 export const RightIcon = styled.TouchableOpacity`
-  left: 15px;
+  right: 15px;
   top: 38px;
   position: absolute;
   z-index: 1;
@@ -101,12 +96,63 @@ export const StyledButton = styled.TouchableOpacity`
   padding: 15px;
   background-color: ${secondary};
   justify-content: center;
+  align-items: center;
   border-radius: 5px;
   margin-vertical: 5px;
   height: 60px;
+
+  ${(props) =>
+    props.google == true &&
+    `
+    background-color: ${tertiary};
+    flex-direction:row;
+    justify-content: center;
+
+  `}
 `;
 
 export const ButtonText = styled.Text`
   color: ${primary};
   font-size: 16px;
+
+  ${(props) =>
+    props.google == true &&
+    `padding: 25px;
+  `}
+`;
+
+export const MessageBox = styled.Text`
+  text-align: center;
+  font-size: 13px;
+`;
+
+export const Line = styled.View`
+  height: 1px;
+  width: 100%;
+  background-color: ${grey};
+  margin-vertical: 10px;
+`;
+
+export const ExtraView = styled.View`
+  justify-content: center;
+  flex-direction: row;
+  align-item: center;
+  padding: 10px;
+`;
+
+export const ExtraText = styled.Text`
+  justify-content: center;
+  align-content: center;
+  color: ${black};
+  font-size: 15px;
+`;
+
+export const TextLink = styled.TouchableOpacity`
+  justify-content: center;
+  align-items: center;
+`;
+
+export const TextLinkContent = styled.Text`
+  color: ${secondary};
+  font-size: 15px;
 `;
