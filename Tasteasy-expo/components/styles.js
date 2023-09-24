@@ -1,8 +1,15 @@
 import styled from "styled-components";
-import { View, Text, Image } from "react-native";
+import {
+  StatusBar,
+  View,
+  Text,
+  Image,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import Constants from "expo-constants";
 
-const StatusBarHeight = Constants.statusBarHeight;
+const statusBarHeight = StatusBar.currentHeight;
 
 //color
 export const Colors = {
@@ -11,9 +18,12 @@ export const Colors = {
   tertiary: "#D98324",
   darkColor: "#472836",
   grey: "#92828D",
+  black: "#1C1C1C",
+  platinum: "#E1DFDB",
 };
 
-const { primary, secondary, tertiary, darkColor, grey } = Colors;
+const { primary, secondary, tertiary, darkColor, grey, black, platinum } =
+  Colors;
 
 export const StyledContainer = styled.View`
   flex: 1;
@@ -23,14 +33,14 @@ export const StyledContainer = styled.View`
 `;
 
 export const InnerContainer = styled.View`
-  flex:1;
-  width:100%:
+  flex: 1;
+  width: 100%;
   align-items: center;
 `;
 
 export const PageLogo = styled.Image`
-  width: 250px;
-  height: 250px;
+  width: 120px;
+  height: 120px;
 `;
 
 export const PageTitle = styled.Text`
@@ -51,4 +61,52 @@ export const SubTitle = styled.Text`
 
 export const StyledFormArea = styled.View`
   width: 90%;
+`;
+
+export const StyledTextInput = styled.TextInput`
+  background-color: ${platinum};
+  padding: 12px;
+  padding-left: 48px;
+  padding-right: 45px;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 60px;
+  margin-vertical: 3px;
+  margin-bottom: 10px;
+  color: ${black};
+`;
+
+export const StyledInputLabel = styled.Text`
+  color: ${black};
+  font-size: 13px;
+  text-align: left;
+  left: 5px;
+`;
+
+export const LeftIcon = styled.View`
+  left: 9px;
+  top: 38px;
+  position: absolute;
+  z-index: 1;
+`;
+
+export const RightIcon = styled.TouchableOpacity`
+  left: 15px;
+  top: 38px;
+  position: absolute;
+  z-index: 1;
+`;
+
+export const StyledButton = styled.TouchableOpacity`
+  padding: 15px;
+  background-color: ${secondary};
+  justify-content: center;
+  border-radius: 5px;
+  margin-vertical: 5px;
+  height: 60px;
+`;
+
+export const ButtonText = styled.Text`
+  color: ${primary};
+  font-size: 16px;
 `;
