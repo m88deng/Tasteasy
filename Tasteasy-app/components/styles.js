@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {View} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import Constants from 'expo-constants';
 
 const StatusBarHeight = Constants.statusBarHeight;
@@ -28,5 +28,14 @@ export const InnerContainer = styled.View`
 `;
 
 export const PageLogo = styled.Image`
+  width: 250px;
+  height: 250px;
+`;
 
-`
+export const PageTitle = styled.Text`
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: ${tertiary};
+  padding: 10px;
+`;
