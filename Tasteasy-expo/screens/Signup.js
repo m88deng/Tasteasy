@@ -33,7 +33,7 @@ import { View } from "react-native";
 
 const { secondary, darkColor, primary } = Colors;
 
-const Login = () => {
+const Signup = () => {
   const [hidePassword, setHidePassword] = useState(true);
   const MyTextInput = ({
     label,
@@ -63,15 +63,11 @@ const Login = () => {
     <StyledContainer>
       <StatusBar style="dark" />
       <InnerContainer>
-        <PageLogo
-          resizeMode="cover"
-          source={require("../img/tasteasy-logo.png")}
-        />
         <PageTitle>Tasteasy</PageTitle>
-        <SubTitle>Account Login</SubTitle>
+        <SubTitle>Account Signup</SubTitle>
 
         <Formik
-          initialValues={{ email: "", password: "" }}
+          initialValues={{ email: "", username: "", password: "" }}
           onSubmit={(values) => {
             console.log(values);
           }}
@@ -84,6 +80,12 @@ const Login = () => {
                 onBlur={handleBlur("email")}
                 value={values.email}
                 keyboardType="email-address"
+              />
+              <MyTextInput
+                label="Username"
+                onChangeText={handleChange("username")}
+                onBlur={handleBlur("username")}
+                value={values.email}
               />
               <MyTextInput
                 label="Password"
@@ -100,14 +102,10 @@ const Login = () => {
                 <ButtonText>Login</ButtonText>
               </StyledButton>
               <Line />
-              <StyledButton google={true} onPress={handleSubmit}>
-                <Fontisto name="google" color={primary} size={25} right={15} />
-                <ButtonText left={5}>Sign in with Google</ButtonText>
-              </StyledButton>
               <ExtraView>
-                <ExtraText>Don't have an account? </ExtraText>
+                <ExtraText>Have an account? </ExtraText>
                 <TextLink>
-                  <TextLinkContent>Sign Up</TextLinkContent>
+                  <TextLinkContent>Login</TextLinkContent>
                 </TextLink>
               </ExtraView>
             </StyledFormArea>
@@ -118,4 +116,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
